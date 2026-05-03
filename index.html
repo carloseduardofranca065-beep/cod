@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para Você ❤️</title>
+    <style>
+        body {
+            background-color: #fdf2f8;
+            font-family: 'Georgia', serif;
+            color: #4a2c3a;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 40px 20px;
+            margin: 0;
+            text-align: center;
+        }
+        .container {
+            max-width: 500px;
+            width: 100%;
+        }
+        .heart {
+            font-size: 60px;
+            margin-bottom: 20px;
+            animation: heartbeat 1.2s infinite;
+        }
+        @keyframes heartbeat {
+            0% { transform: scale(1); }
+            15% { transform: scale(1.2); }
+            30% { transform: scale(1); }
+            45% { transform: scale(1.2); }
+            100% { transform: scale(1); }
+        }
+        .message {
+            font-size: 1.3rem;
+            margin: 25px 0 15px 0;
+        }
+        .final-message {
+            font-size: 1.5rem;
+            font-style: italic;
+            font-weight: bold;
+            color: #be185d;
+            margin-top: 35px;
+        }
+        .image-box {
+            width: 100%;
+            max-width: 400px;
+            margin: 0 auto;
+            border: 10px solid white;
+            border-bottom-width: 25px;
+            border-radius: 4px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            background-color: white;
+        }
+        .image-box img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Estilo do botão de música */
+        .music-control {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #be185d;
+            color: white;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            font-family: sans-serif;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+        .music-control:hover {
+            background-color: #9d174d;
+        }
+    </style>
+</head>
+<body>
+
+    <audio id="minhaMusica" loop>
+        <source src="chase atlantic - friends (legendado).mp3" type="audio/mpeg">
+        Seu navegador não suporta áudio.
+    </audio>
+
+    <div class="container">
+        <div class="heart">❤️</div>
+        
+        <button class="music-control" onclick="tocarMusica()">Clique para ouvir 🎵</button>
+
+        <div class="message">ei, sabia que eu te acho linda? linda como...</div>
+
+        <div class="image-box">
+            <img src="https://paginaebooks.wordpress.com/wp-content/uploads/2017/03/resenha_aprisaodorei1.jpg" alt="Sua primeira imagem">
+        </div>
+
+        <div class="message">linda como esse filme</div>
+
+        <div class="image-box">
+            <img src="https://wp.pt.aleteia.org/wp-content/uploads/sites/5/2017/04/little-prince.jpg" alt="Imagem do filme">
+        </div>
+
+        <div class="final-message">linda como as mais belas pinturas desse mundo</div>
+    </div>
+
+    <script>
+        function tocarMusica() {
+            var audio = document.getElementById("minhaMusica");
+            var botao = document.querySelector(".music-control");
+            
+            if (audio.paused) {
+                audio.play();
+                botao.innerHTML = "Pausar música ⏸️";
+            } else {
+                audio.pause();
+                botao.innerHTML = "Ouvir música 🎵";
+            }
+        }
+    </script>
+
+</body>
+</html>
